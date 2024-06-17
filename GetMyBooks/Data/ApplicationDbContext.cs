@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GetMyBooks.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GetMyBooks.Data
 {
@@ -7,5 +8,7 @@ namespace GetMyBooks.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {            
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
