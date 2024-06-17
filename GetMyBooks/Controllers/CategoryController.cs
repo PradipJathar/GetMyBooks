@@ -29,10 +29,15 @@ namespace GetMyBooks.Controllers
         [HttpPost]
         public IActionResult Create(Category category)
         {
-            db.Categories.Add(category);
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                db.Categories.Add(category);
+                db.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index"); 
+            }
+
+            return View();
         }
     }
 }
