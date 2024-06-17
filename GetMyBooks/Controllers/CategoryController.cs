@@ -29,6 +29,11 @@ namespace GetMyBooks.Controllers
         [HttpPost]
         public IActionResult Create(Category category)
         {
+            if (category.Name == category.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("Name", "The DisplayOrder can not exactly match Name.");
+            }
+
             if (ModelState.IsValid)
             {
                 db.Categories.Add(category);
