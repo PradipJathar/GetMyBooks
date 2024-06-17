@@ -20,5 +20,10 @@ namespace GetMyBooks.Controllers
 
             return View(categoryList);
         }
+        
+        public IActionResult Create()
+        {            
+            return View();
+        }
     }
 }
