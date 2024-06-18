@@ -53,7 +53,7 @@ namespace GetMyBooks.Controllers
                 return NotFound();
             }
 
-            Category category = db.Categories.Find(id);
+            Category? category = db.Categories.Find(id);
 
             if (category == null)
             {
@@ -75,6 +75,39 @@ namespace GetMyBooks.Controllers
             }
 
             return View();
+        }
+        
+        
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            Category? category = db.Categories.Find(id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return View(category);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePost(int? id)
+        {
+            Category? category = db.Categories.Find(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            db.Categories.Remove(category);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }
