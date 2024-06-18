@@ -60,6 +60,20 @@ namespace GetMyBooks.Controllers
                 return NotFound();
             }
 
+            return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Categories.Update(category);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+
             return View();
         }
     }
