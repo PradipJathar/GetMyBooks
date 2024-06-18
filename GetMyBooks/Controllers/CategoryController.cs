@@ -39,6 +39,8 @@ namespace GetMyBooks.Controllers
                 db.Categories.Add(category);
                 db.SaveChanges();
 
+                TempData["success"] = "Category created successfully.";
+
                 return RedirectToAction("Index"); 
             }
 
@@ -70,6 +72,8 @@ namespace GetMyBooks.Controllers
             {
                 db.Categories.Update(category);
                 db.SaveChanges();
+
+                TempData["success"] = "Category edited successfully.";
 
                 return RedirectToAction("Index");
             }
@@ -106,6 +110,8 @@ namespace GetMyBooks.Controllers
 
             db.Categories.Remove(category);
             db.SaveChanges();
+
+            TempData["success"] = "Category deleted successfully.";
 
             return RedirectToAction("Index");
         }
