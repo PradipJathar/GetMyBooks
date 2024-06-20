@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GetMyBooksRazor.Pages.Categories
 {
+    [BindProperties]
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext db;
@@ -19,6 +20,14 @@ namespace GetMyBooksRazor.Pages.Categories
 
         public void OnGet()
         {
+        }
+
+        public IActionResult OnPost() 
+        { 
+            db.Categories.Add(Category);
+            db.SaveChanges();
+
+            return RedirectToPage("Index");
         }
     }
 }
