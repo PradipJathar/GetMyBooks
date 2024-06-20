@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetMyBooks", "GetMyBooks\GetMyBooks.csproj", "{4389DF76-8E52-4931-9B92-0ACEC485A7E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetMyBooksRazor", "GetMyBooksRazor\GetMyBooksRazor.csproj", "{553DA6C9-16FE-4548-AEFA-3B8B2F97BA2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetMyBooksRazor", "GetMyBooksRazor\GetMyBooksRazor.csproj", "{553DA6C9-16FE-4548-AEFA-3B8B2F97BA2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
