@@ -33,6 +33,8 @@ namespace GetMyBooksRazor.Pages.Categories
                 db.Categories.Update(Category);
                 db.SaveChanges();
 
+                TempData["success"] = "Category edited successfully.";
+
                 return RedirectToPage("Index");
             }
 

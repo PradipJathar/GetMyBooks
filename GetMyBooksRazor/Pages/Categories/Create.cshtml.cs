@@ -27,6 +27,8 @@ namespace GetMyBooksRazor.Pages.Categories
             db.Categories.Add(Category);
             db.SaveChanges();
 
+            TempData["success"] = "Category created successfully.";
+
             return RedirectToPage("Index");
         }
     }
